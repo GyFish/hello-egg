@@ -1,7 +1,13 @@
 'use strict';
 
-// config/config.default.js
 module.exports = {
+  
+  cluster: {
+    listen: {
+      port: 7007,
+      hostname: '127.0.0.1'
+    }
+  },
   
   keys: 'demo' + '_1517046401873_3118',
 
