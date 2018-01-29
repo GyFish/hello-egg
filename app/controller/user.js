@@ -8,12 +8,12 @@ class UserController extends Controller {
   // list
   async users() {
 
-  	var users = await this.ctx.service.user.findAll();
+  	const users = await this.ctx.service.user.findAll();
 
   	console.log('  >> users');
   	console.log(users);
 
-    this.body = users;
+    this.success(users);
 
   }
 
