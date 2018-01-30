@@ -1,19 +1,17 @@
 'use strict';
 
-/**
- * @param {Egg.Application} app - egg application
- */
 module.exports = app => {
 
-  const { router, controller } = app;
+    const { router, controller } = app;
 
-  router.get('/', controller.home.index);
+    router.get('/', controller.home.index);
 
-  // 根据 id 查找
-  router.get('/api/v1/survey', app.controller.survey.survey);
+    router.post('/api/v1/user', controller.userController.create);
 
+    router.get('/api/v1/user/findByName/:name', controller.userController.findByName);
 
-  router.get('/api/v1/users', app.controller.user.users);
+    router.get('/api/v1/users', controller.userController.findAll);
 
+    router.delete('/api/v1/user/:_id', controller.userController.remove)
 
 };
